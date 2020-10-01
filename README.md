@@ -13,3 +13,6 @@ To run the project just do:
 ### `npm install`
 and
 ### `npm start`
+
+
+![alt text](https://github.com/eduasinco/my-beloved-country/blob/master/screenshot.png?raw=true)
