@@ -2,7 +2,6 @@ import React from 'react';
 import CountryCard from "./CountryCard"
 import {Container, Row, Col, InputGroup, FormControl, Form} from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
-import ThemeContext from "../App"
 
 const url = "https://restcountries.eu/rest/v2/"
 
@@ -22,8 +21,6 @@ class Home extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
     }
-
-    static contextType = ThemeContext;
 
     componentDidMount() {
         this.fetchData(url + "all")

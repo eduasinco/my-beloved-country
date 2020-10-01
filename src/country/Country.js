@@ -180,7 +180,7 @@ class Country extends React.Component {
                                     </ListGroupItem>
                                     <ListGroupItem className={this.state.darkMode}>
                                         <b>Regional blocks:</b>
-                                        <ListGroup horizontal>
+                                        <ListGroup>
                                             {this.state.country.regionalBlocs.map((rb) =>
                                                 <ListGroup horizontal>
                                                     {Object.keys(rb).map((key, index) => {
