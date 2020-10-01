@@ -7,7 +7,9 @@ function CountryCard(props) {
         props.history.push("country/" + name)
     }
     return (
-        <Card style={{cursor: "pointer"}} onClick={(event) => handleSelectCountry(event, props.item.name)}>
+        <Card className={props.darkMode ? "dark-mode" : ""}
+              style={{cursor: "pointer"}}
+              onClick={(event) => handleSelectCountry(event, props.item.name)}>
             <Card.Img variant="top" src={props.item.flag} style={{height: 200, objectFit: "cover"}} />
             <Card.Body>
                 <Card.Title>{props.item.name}</Card.Title>

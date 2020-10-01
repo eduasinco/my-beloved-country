@@ -15,6 +15,7 @@ class Home extends React.Component {
             country: '',
             region: '',
             items: [],
+            darkMode: props.darkMode,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -83,7 +84,7 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <Container className="py-4">
+                <Container className="py-4 ">
                     <Row>
                         <Col xs={12} md={6} lg={3}>
                             <Form.Label>Country</Form.Label>

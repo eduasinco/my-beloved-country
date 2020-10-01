@@ -11,6 +11,7 @@ class Country extends React.Component {
             isLoaded: false,
             country: null,
             error: null,
+            darkMode: props.darkMode ? "dark-mode-card" : "",
         };
     }
 
@@ -44,41 +45,41 @@ class Country extends React.Component {
             <>
                 <Container className="py-4">
                     {this.state.isLoaded ?
-                        <Card>
+                        <Card className={this.state.darkMode ? "dark-mode-card" : ""} >
                             <Card.Img variant="top" src={this.state.country.flag} style={{height: 400, objectFit: "cover"}} />
                             <Card.Body>
                                 <Card.Title>{this.state.country.name}</Card.Title>
-                                <ListGroup className="list-group-flush">
-                                    <ListGroupItem>
+                                <ListGroup className={"list-group-flush"}>
+                                    <ListGroupItem className={this.state.darkMode ? "dark-mode-card" : ""}>
                                         <b>Basic info</b>
                                         <Row>
                                             <Col xs={12} md={6}>
-                                                <ListGroupItem>Region: <Badge variant="secondary">{this.state.country.region}</Badge></ListGroupItem>
-                                                <ListGroupItem>Capital: <Badge variant="secondary">{this.state.country.capital}</Badge> </ListGroupItem>
-                                                <ListGroupItem>subregion: <Badge variant="secondary">{this.state.country.subregion}</Badge> </ListGroupItem>
-                                                <ListGroupItem>population: <Badge variant="secondary">{this.state.country.population}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Lat: <Badge variant="secondary">{this.state.country.latlng[0]}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Lng: <Badge variant="secondary">{this.state.country.latlng[1]}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Demonym: <Badge variant="secondary">{this.state.country.demonym}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Region: <Badge variant="secondary">{this.state.country.region}</Badge></ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Capital: <Badge variant="secondary">{this.state.country.capital}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>subregion: <Badge variant="secondary">{this.state.country.subregion}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>population: <Badge variant="secondary">{this.state.country.population}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Lat: <Badge variant="secondary">{this.state.country.latlng[0]}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Lng: <Badge variant="secondary">{this.state.country.latlng[1]}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Demonym: <Badge variant="secondary">{this.state.country.demonym}</Badge> </ListGroupItem>
                                             </Col>
-                                            <Col xs={12} md={6}>
-                                                <ListGroupItem>Area: <Badge variant="secondary">{this.state.country.area}</Badge></ListGroupItem>
-                                                <ListGroupItem>Gini: <Badge variant="secondary">{this.state.country.gini}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Alpha Code: <Badge variant="secondary">{this.state.country.alpha2Code}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Native Name: <Badge variant="secondary">{this.state.country.nativeName}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Numeric Code: <Badge variant="secondary">{this.state.country.numericCode}</Badge> </ListGroupItem>
-                                                <ListGroupItem>CIOC: <Badge variant="secondary">{this.state.country.cioc}</Badge> </ListGroupItem>
-                                                <ListGroupItem>Alpha3 Code: <Badge variant="secondary">{this.state.country.alpha3Code}</Badge> </ListGroupItem>
+                                            <Col xs={12} md={6} className={this.state.darkMode ? "dark-mode-card" : ""}>
+                                                <ListGroupItem className={this.state.darkMode}>Area: <Badge variant="secondary">{this.state.country.area}</Badge></ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Gini: <Badge variant="secondary">{this.state.country.gini}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Alpha Code: <Badge variant="secondary">{this.state.country.alpha2Code}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Native Name: <Badge variant="secondary">{this.state.country.nativeName}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Numeric Code: <Badge variant="secondary">{this.state.country.numericCode}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>CIOC: <Badge variant="secondary">{this.state.country.cioc}</Badge> </ListGroupItem>
+                                                <ListGroupItem className={this.state.darkMode}>Alpha3 Code: <Badge variant="secondary">{this.state.country.alpha3Code}</Badge> </ListGroupItem>
                                             </Col>
                                         </Row>
                                     </ListGroupItem>
-                                    <ListGroupItem>
+                                    <ListGroupItem className={this.state.darkMode}>
                                         <Row>
                                             <Col xs={12} md={6} lg={3}>
                                                 <b>Spellings:</b>
                                                 <ListGroup>
                                                     {this.state.country.altSpellings.map((sp) =>
-                                                        <ListGroup.Item>{sp}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{sp}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -86,7 +87,7 @@ class Country extends React.Component {
                                                 <b>Timezones:</b>
                                                 <ListGroup>
                                                     {this.state.country.timezones.map((tz) =>
-                                                        <ListGroup.Item>{tz}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{tz}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -94,7 +95,7 @@ class Country extends React.Component {
                                                 <b>Top level domains:</b>
                                                 <ListGroup>
                                                     {this.state.country.topLevelDomain.map((dom) =>
-                                                        <ListGroup.Item>{dom}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{dom}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -102,7 +103,7 @@ class Country extends React.Component {
                                                 <b>Calling codes:</b>
                                                 <ListGroup>
                                                     {this.state.country.callingCodes.map((code) =>
-                                                        <ListGroup.Item>{code}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{code}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -112,7 +113,7 @@ class Country extends React.Component {
                                                 <b>Translations:</b>
                                                 <ListGroup>
                                                     {Object.keys(this.state.country.translations).map((key, index) =>
-                                                        <ListGroup.Item>{this.state.country.translations[key]}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{this.state.country.translations[key]}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -120,7 +121,7 @@ class Country extends React.Component {
                                                 <b>Borders:</b>
                                                 <ListGroup>
                                                     {this.state.country.borders.map((tz) =>
-                                                        <ListGroup.Item>{tz}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{tz}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -128,7 +129,7 @@ class Country extends React.Component {
                                                 <b>Languages:</b>
                                                 <ListGroup>
                                                     {this.state.country.languages.map((lan) =>
-                                                        <ListGroup.Item>{lan.name}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{lan.name}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
@@ -136,13 +137,13 @@ class Country extends React.Component {
                                                 <b>Currencies:</b>
                                                 <ListGroup>
                                                     {this.state.country.currencies.map((cur) =>
-                                                        <ListGroup.Item>{cur.code}</ListGroup.Item>
+                                                        <ListGroup.Item className={this.state.darkMode}>{cur.code}</ListGroup.Item>
                                                     )}
                                                 </ListGroup>
                                             </Col>
                                         </Row>
                                     </ListGroupItem>
-                                    <ListGroupItem>
+                                    <ListGroupItem className={this.state.darkMode}>
                                         <b>Regional blocks:</b>
                                         <ListGroup horizontal>
                                             {this.state.country.regionalBlocs.map((rb) =>
@@ -151,14 +152,14 @@ class Country extends React.Component {
                                                         let element;
                                                         if (Array.isArray(rb[key])){
                                                             if (rb[key].length === 0){
-                                                                element = <ListGroup.Item>
-                                                                    <ListGroup>
-                                                                        {rb[key].map((it) => <ListGroup.Item>{it}</ListGroup.Item>)}
+                                                                element = <ListGroup.Item className={this.state.darkMode}>
+                                                                    <ListGroup className={this.state.darkMode}>
+                                                                        {rb[key].map((it) => <ListGroup.Item className={this.state.darkMode}>{it}</ListGroup.Item>)}
                                                                     </ListGroup>
                                                                 </ListGroup.Item>
                                                             }
                                                         } else {
-                                                            element = <ListGroup.Item>
+                                                            element = <ListGroup.Item className={this.state.darkMode}>
                                                                 {rb[key]}
                                                             </ListGroup.Item>
                                                         }
