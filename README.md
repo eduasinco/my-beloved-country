@@ -4,7 +4,7 @@ This app is a simple and humble site where a list of the countries obtained from
 
 The app is built with a responsive design pattern that allows to reshape the structure of the views when the size of the window changes.
 
-It also contains simple routing and a dark and light mode with local mode savings.
+It also contains simple routing and a dark and light mode with local mode state savings.
 
 ## Run the project
 
