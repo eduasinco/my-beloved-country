@@ -1,4 +1,4 @@
-## MY BELOVED COUNTRY
+# MY BELOVED COUNTRY
 
 This app is a simple and humble site where a list of the countries obtained from the https://restcountries.eu/ API is being showed  with its respective country and region filters that can be used dynamically. 
 
@@ -14,5 +14,5 @@ To run the project just do:
 and
 ### `npm start`
 
-
+## Image
 ![alt text](https://github.com/eduasinco/my-beloved-country/blob/master/screenshot.png?raw=true)
