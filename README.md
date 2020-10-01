@@ -14,5 +14,5 @@ To run the project just do:
 and
 ### `npm start`
 
-## Image
+## Screenshot
 ![alt text](https://github.com/eduasinco/my-beloved-country/blob/master/screenshot.png?raw=true)
