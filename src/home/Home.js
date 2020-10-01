@@ -3,6 +3,7 @@ import CountryCard from "./CountryCard"
 import {Container, Row, Col, InputGroup, FormControl, Form} from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import ThemeContext from "../App"
+
 const url = "https://restcountries.eu/rest/v2/"
 
 
@@ -21,6 +22,7 @@ class Home extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
     }
+
     static contextType = ThemeContext;
 
     componentDidMount() {
@@ -28,15 +30,15 @@ class Home extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.country !== this.state.country){
+        if (prevState.country !== this.state.country) {
             let ss = url + "all"
-            if (this.state.country){
+            if (this.state.country) {
                 ss = url + "name/" + this.state.country
             }
             this.fetchData(ss)
-        } else if (prevState.region !== this.state.region){
+        } else if (prevState.region !== this.state.region) {
             let ss = url
-            if (this.state.region === "All"){
+            if (this.state.region === "All") {
                 ss += "all"
             } else {
                 ss += "region/" + this.state.region
@@ -45,7 +47,7 @@ class Home extends React.Component {
         }
     }
 
-    fetchData(url){
+    fetchData(url) {
         fetch(url)
             .then(res => res.json())
             .then(
@@ -115,7 +117,7 @@ class Home extends React.Component {
                     {!this.state.isLoaded ?
                         <div>Loading...</div> :
                         this.state.error ?
-                            <div>Sorry this country was not found...</div>  :
+                            <div>Sorry this country was not found...</div> :
                             <Row>
                                 {this.state.items.map((item) =>
                                     <Col key={item.name} xs={12} md={6} lg={3} className="py-3">
